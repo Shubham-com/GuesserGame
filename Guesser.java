@@ -76,12 +76,18 @@ class Umpire
 }
 class GuesserGameApp
         {
+    final static int CHANCES = 3;
     public static void main(String args[])
     {
         Umpire u= new Umpire();
         u.collectNumFromGuesser();
+        int i=1;
+        while(i<=CHANCES)
+        {
         u.collectNumFromPlayers();
         u.compare();
+            ++I;
+        }
     }
 }
 
