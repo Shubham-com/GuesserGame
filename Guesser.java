@@ -14,23 +14,39 @@ class Guesser
 {
     int gnum;
     
-    int guessNum()
+    int guessNum(int low,int high)
     {
-        System.out.println("Guesser! Kindly guess a number between 1 to 100");
+        System.out.println("Guesser! Kindly guess a number between "+low+"to"+high);
         Scanner kb=new Scanner(System.in);
         gnum=kb.nextInt();
+        if(gnum >=low && gnum <=high)
+        {
         return gnum;
+        }
+        else
+        {
+            System.out.println("Please guess a valid number within the range specified");
+            return guessNum(low,high);
+        }
     }
 }
 class Player
 {
     int pnum;
-    int predictNum()
+    int predictNum(int low,int high)
     {
-        System.out.println("Player! Kindly predict a number between 1 to 100");
+        System.out.println("Player! Kindly predict a number between "+low+"to"+high);
         Scanner kb=new Scanner(System.in);
         pnum=kb.nextInt();
+        if(pnum >=low && pnum <=high)
+        {
         return pnum;
+        }
+        else
+        {
+            System.out.println("Please guess a valid number within the range specified");
+            return predictNum(low,high);
+        }
     }
 }
 class Umpire
@@ -50,9 +66,9 @@ class Umpire
         Player p2=new Player();
         Player p3=new Player();
         
-        numFromPlayer1=p1.predictNum();
-        numFromPlayer2=p2.predictNum();
-        numFromPlayer3=p3.predictNum();
+        numFromPlayer1=p1.predictNum(1,100);
+        numFromPlayer2=p2.predictNum(1,100);
+        numFromPlayer3=p3.predictNum(1,100);
     }
     void compare()
     {
