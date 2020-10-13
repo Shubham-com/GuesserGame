@@ -76,11 +76,11 @@ class Umpire
         {
             System.out.println("Player1 wins it");
         }
-        else if(numFromGuesser==numFromPlayer2)
+        if(numFromGuesser==numFromPlayer2)
         {
             System.out.println("Player2 wins it");
         }
-        else if(numFromGuesser==numFromPlayer3)
+        if(numFromGuesser==numFromPlayer3)
         {
             System.out.println("Player3 wins it");
         }
